@@ -1,0 +1,90 @@
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  /*   background-color: rgba(82, 85, 95, 0.1); */
+}
+.wrapper {
+  z-index: 300;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-150px);
+
+
+
+  /* transform: translateY(-97px); */
+  width: 300px;
+  height: 194px;
+  background-color: var(--bg-primary);
+  box-shadow: 10px 10px 30px var(--box-shadow);
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 380px;
+  }
+}
+
+.yesBtn,
+.noBtn {
+  width: 125px;
+  height: 44px;
+  border: 2px solid var(--bg-secondary);
+  background-color: var(--bg-primary);
+  border-radius: 16px;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--font-secondary);
+}
+
+.yesBtn:hover,
+.yesBtn:focus,
+.noBtn:hover,
+.noBtn:focus {
+  border-color: var(--accent-bright);
+}
+
+.yesBtn:active,
+.noBtn:active {
+  border-color: var(--accent-bright);
+  background-color: var(--accent-bright);
+  color: var(--bg-primary);
+}
+
+.btnItem:nth-child(1) {
+  margin-right: 15px;
+}
+
+.closeBtn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background-color: transparent;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btnsBlock {
+  display: flex;
+  justify-content: center;
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-secondary);
+}

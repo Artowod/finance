@@ -1,0 +1,35 @@
+#logo {
+  height: auto;
+}
+.team {
+  font-family: 'Akronim', cursive;
+  font-size: 24px;
+  text-decoration: none;
+  vertical-align: middle;
+  outline: none;
+  color: #ff7300;
+  -webkit-animation: Blazing 2s linear infinite alternate;
+  animation: Blazing 2s linear infinite alternate;
+}
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.line {
+  width: 3px;
+  height: 50px;
+  background-color: brown;
+}
+
+@media only screen and (max-width: 767px) {
+  .visibility {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .logoutIcon {
+    display: none;
+  }
+}

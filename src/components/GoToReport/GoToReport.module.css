@@ -1,0 +1,61 @@
+.goToReport {
+  display: flex;
+  /* height: 100%; */
+  justify-content: center;
+  align-items: center;
+
+  margin: 37px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .goToReport {
+    /* width: 150px; */
+    justify-content: right;
+    /* margin-left: auto; */
+    /* margin-top: 0;
+    margin-bottom: 0; */
+    margin: 0;
+  }
+}
+@media screen and (max-width: 768px) {
+  .goToReport {
+    margin: 15px 0;
+  }
+}
+
+.title {
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+}
+.link {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+
+  color: #52555f;
+  cursor: pointer;
+}
+.link:hover,
+.link:focus {
+  color: var(--accent-bright);
+}
+.link:hover .icon,
+.link:focus .icon {
+  fill: var(--accent-bright);
+}
+/* @media screen and (min-width: 768px) {
+  .goToReport {
+    margin-left: 90px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .goToReport {
+    margin-left: 205px;
+  }
+}
+ */

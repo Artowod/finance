@@ -1,0 +1,80 @@
+@import '../../utils/variables.css';
+
+.header {
+  display: none;
+  visibility: hidden;
+}
+.list {
+  width: 100%;
+}
+
+.groupingDiv {
+  display: flex;
+  justify-content: space-between;
+}
+.description {
+  text-align: end;
+}
+.category {
+  text-align: center;
+}
+.transactionsList {
+  
+  /* background-color: none; */
+}
+
+
+
+@media screen and (min-width: 768px) {
+  .header {
+    display: flex;
+    visibility: visible;
+
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+
+    background-color: var(--bg-secondary);
+    color: var(--font-primary);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+
+    letter-spacing: 0.02;
+    font-size:12px;
+    line-height: 1.17;
+  }
+  .header > div,
+  .header > span {
+    width: 33.3%;
+  }
+  .list {
+    width: 100%;
+    margin-bottom: 40px;
+    box-shadow: 2px 2px 60px rgba(219, 221, 226, 0.2);
+    border-bottom: 2px solid var(--bg-secondary);
+  }
+  .transactionsList {
+background-color: var(--bg-primary);
+height: 346px;
+
+ border-left: 2px solid var(--bg-table);
+ border-right: 2px solid var(--bg-table);
+  }
+  .ulPlaceholder {
+    height: 346px;
+    border-left: 2px solid var(--bg-table);
+    border-right: 2px solid var(--bg-table);
+    border-bottom: 2px solid var(--bg-table);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .list {
+    width: 760px;
+  }
+}

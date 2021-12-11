@@ -1,0 +1,45 @@
+.currentMonthBlock {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.currentMonth {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17px;
+  text-align: center;
+  letter-spacing: 0.04em;
+
+  color: rgba(82, 85, 95, 0.7);
+  margin-bottom: 5px;
+}
+
+.monthBlock {
+  display: flex;
+  align-items: baseline;
+}
+
+.currentMonthText {
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+  padding: 5px 15px;
+}
+
+@media screen and (min-width: 768px) {
+  .currentMonthBlock {
+    margin-top: 12px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+}

@@ -1,0 +1,42 @@
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  z-index: 1;
+  width: 100vw;
+  height: 100vh;
+  /*   background-color: rgba(82, 85, 95, 0.1); */
+}
+.wrapper {
+  z-index: 100;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-150px);
+
+  /* transform: translateY(-97px); */
+  width: 300px;
+  height: auto;
+  background-color: var(--bg-primary);
+  box-shadow: 10px 10px 30px var(--box-shadow);
+  border-radius: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    width: 380px;
+  }
+}
+
+.title {
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--font-secondary);
+}

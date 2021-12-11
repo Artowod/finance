@@ -1,0 +1,9 @@
+.theme_switch {
+  padding: 10px;
+  background-color: rgb(217, 251, 150);
+  border: 3px green;
+  border-style: ridge;
+  border-radius: 50%;
+  font-weight: 700;
+  color: rgb(51, 65, 28);
+}

@@ -1,0 +1,247 @@
+.auth {
+  width: 300px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  /* background-color: var(---bg-primary); */
+  background-color: white;
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 30px;
+  z-index: 100;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.authText {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  color: var(--font-secondary);
+  margin: 0 39px 20px 39px;
+}
+
+.authText.text {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  text-align: left;
+  color: var(--font-secondary);
+  margin: 0 29px 20px 29px;
+}
+.socialBtnsWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 15px 0 15px;
+}
+
+.googleBtn {
+  /* display: block;
+  margin: 0 auto; */
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 40px;
+  width: 122px;
+  background: #f6f7fb;
+  border-radius: 26px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: var(--font-primary);
+  cursor: pointer;
+}
+
+.googleIcon {
+  margin-right: 10px;
+}
+
+.inputTitle {
+  display: block;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.04em;
+  color: var(--font-primary);
+  margin-bottom: 10px;
+}
+
+.authInput {
+  width: 100%;
+  background: #f6f7fb;
+  border-radius: 30px;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  padding-left: 20px;
+  border: none;
+}
+
+.authInput::placeholder {
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.04em;
+  color: #a6abb9;
+}
+
+.authInput:hover,
+.authInput:focus {
+  outline: 2px solid var(--accent-bright);
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.password {
+  position: absolute;
+  top: 14px;
+  right: 22px;
+}
+
+.inputsWrapper input:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.inputsWrapper {
+  margin: 0 29px 40px 29px;
+}
+
+.authBtn {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  width: 125px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border-radius: 16px;
+  border: none;
+  background: #f5f6fb;
+  font-family: Roboto;
+  filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  cursor: pointer;
+}
+
+.authBtn:nth-child(1) {
+  margin-right: 15px;
+  margin-left: 18px;
+}
+
+.authBtn.authBtnActive {
+  /*   color: var(--hero-shadow);
+  background-color: var(--accent-bright);
+  filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
+ */
+  border-color: var(--accent-bright);
+  background-color: var(--accent-bright);
+  color: var(--bg-primary);
+}
+
+@media screen and (mix-width: 767px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 1279px) {
+  .auth {
+    width: 436px;
+    height: 535px;
+    margin: 0 auto;
+    top: -2%;
+    left: 54%;
+  }
+  .authText {
+    text-align: left;
+    margin: 0 0 20px 0;
+  }
+  .authText.text {
+    margin: 0 0 20px 0;
+  }
+  .authWrapper {
+    margin: 0 auto;
+    width: 265px;
+  }
+  .inputsWrapper {
+    margin: 0 0 40px 0;
+  }
+
+  .authWrapper {
+    margin: 0 auto;
+    width: 265px;
+  }
+
+  .socialBtnsWrapper {
+    margin: 0;
+  }
+
+  .inputsWrapper input:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .inputsWrapper {
+    margin-bottom: 40px;
+  }
+
+  .authBtn:nth-child(1) {
+    margin-left: 0;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .authWrapper {
+    margin: 0 85px 0 85px;
+    width: 265px;
+  }
+  .socialBtnsWrapper {
+    margin: 0;
+  }
+  .authText {
+    text-align: left;
+    margin: 0 0 20px 0;
+  }
+
+  /* .socialBtnsWrapper {
+    display: flex;
+    justify-content: space-between;
+  } */
+
+  .authText.text {
+    margin: 0 0 20px 0;
+  }
+
+  .inputsWrapper {
+    margin: 0 0 40px 0;
+  }
+  .inputsWrapper input:not(:last-child) {
+    margin-bottom: 30px;
+  }
+
+  .authBtn:nth-child(1) {
+    margin-right: 15px;
+    margin-left: 0;
+  }
+
+  .auth {
+    width: 436px;
+    top: -53%;
+    left: 74%;
+    transform: translate(-50%, -50%);
+  }
+}

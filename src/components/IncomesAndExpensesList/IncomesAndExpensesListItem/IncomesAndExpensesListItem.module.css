@@ -1,0 +1,133 @@
+@import '../../../utils/variables.css';
+
+.listItem {
+  display: flex;
+
+  color: var(--font-secondary);
+  font-size: 12px;
+  line-height: 1.17;
+
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  border-bottom: 1px solid var(--bg-table);
+}
+
+.changeFlow {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-around;
+
+  width: fit-content;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-self: flex-end;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.description {
+  font-weight: 700;
+}
+
+.date,
+.category {
+  font-size: 8px;
+}
+
+.expenses {
+  font-weight: bold;
+  color: var(--font-expenses);
+}
+.incomes {
+  font-weight: bold;
+  color: var(--font-incomes);
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 32px;
+  height: 32px;
+
+  border-radius: 50%;
+  border: none;
+  background-color: transparent;
+}
+
+.delete:hover,
+.delete:focus {
+  background-color: var(--bg-table);
+}
+.delete:hover {
+  cursor: pointer;
+}
+.deleteIcon {
+  width: 18px;
+  height: 18px;
+  fill: var(--font-secondary);
+}
+@media screen and (max-width: 250px) {
+  .category {
+    display: none;
+    visibility: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .changeFlow,
+  .amount {
+    margin-right: 20px;
+  }
+  .flex {
+    margin-left: auto;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .changeFlow {
+    margin-right: 0;
+  }
+  .listItem {
+    align-items: center;
+  }
+  .description {
+    font-weight: 400;
+  }
+  .date,
+  .category {
+    font-size: 12px;
+  }
+  .category {
+    align-self: center;
+  }
+  .description {
+    width: 50%;
+    text-align: center;
+    padding-left: 20px;
+  }
+  .changeFlow {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .listItem > div,
+  .listItem > span {
+    width: 33.3%;
+  }
+
+  .listItem {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

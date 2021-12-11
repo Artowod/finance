@@ -1,0 +1,219 @@
+@import '../../utils/variables.css';
+button,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+.inputsWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1px;
+}
+
+/* .wrapper {
+  display: flex;
+  justify-content: center;
+
+  background-color: var(--bg-secondary);
+  padding-left: 5px;
+  padding-right: 5px;
+  flex-direction: column-reverse !important;
+} */
+
+.title {
+  margin-bottom: 6px;
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--font-secondary);
+  font-family: Roboto, sans-serif;
+}
+
+.formWrapper {
+  position: relative;
+  margin-bottom: auto;
+  margin-top: 0;
+  padding: 1px;
+}
+.balance {
+  display: block;
+  height: 44px;
+  width: 125px;
+  padding: 6px 12px;
+  background-color: var(--bg-secondary);
+  border: 2px white solid;
+  border-right: none;
+  border-radius: 16px;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  font-size: 12px;
+  font-weight: 700;
+  font-family: Roboto, sans-serif;
+  text-align: right;
+}
+
+.balance:focus {
+  border-color: var(--accent-bright);
+}
+
+.confirmBtn {
+  padding: 6px 12px;
+  height: 44px;
+  width: 125px;
+  text-transform: uppercase;
+  background-color: var(--bg-secondary);
+  border: 2px white solid;
+  border-radius: 16px;
+  border-bottom-left-radius: 0px;
+  border-top-left-radius: 0px;
+
+  font-size: 12px;
+  font-weight: 400;
+  font-family: Roboto, sans-serif;
+  cursor: pointer;
+}
+
+.confirmBtn:hover,
+.confirmBtn:focus {
+  color: var(--accent-bright);
+  border: 2px var(--accent-bright) solid;
+}
+
+.confirmBtn:active {
+  border-color: var(--accent-bright);
+  background-color: var(--accent-bright);
+  color: var(--bg-primary);
+}
+
+.confirmBtn_disabled {
+  composes: confirmBtn;
+}
+
+.confirmBtn_disabled:hover,
+.confirmBtn_disabled:focus {
+  color: var(--font-secondary);
+  border: 2px var(--bg-primary) solid;
+  cursor: initial;
+}
+
+.balanceSection {
+  text-align: center;
+  margin-top: 30px;
+  /* background-color: red; */
+}
+
+.goHomeSection {
+  display: flex;
+  /* width: 100%; */
+  justify-content: left;
+  align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapper {
+    /* width: 665px; */
+    flex-direction: row;
+  }
+
+  .balanceSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+  }
+
+  .balance {
+    margin-right: 15px;
+    border-radius: 16px;
+    border: 2px var(--bg-primary) solid;
+  }
+  .title {
+    margin-right: 21px;
+    margin-bottom: 0;
+  }
+  .confirmBtn {
+    border-radius: 16px;
+  }
+}
+.triangle {
+  position: absolute;
+  top: -12px;
+  left: 69px;
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+
+  border-bottom: 16px solid var(--modal-color-arrow);
+}
+
+.reminding {
+  z-index: 10;
+  display: block;
+  width: 282px;
+  height: 152px;
+  padding: 30px;
+  position: absolute;
+  top: 65px;
+  left: -15px;
+  /* left: 20px;   */
+  border: 1px var(--accent-bright);
+  color: white;
+  font-size: 14px;
+  background: linear-gradient(
+    117.84deg,
+    var(--modal-color-first) 2.84%,
+    var(--modal-color-second) 67.28%
+  );
+  border-radius: 30px;
+}
+
+.remindingSubMessage {
+  margin-top: 20px;
+  font-size: 12px;
+}
+
+/* @media screen and (min-width: 1280px) {
+  .wrapper {
+    margin-top: 40px;
+    margin-bottom: 30px;
+
+    display: grid;
+    grid-template-columns: 25% 50% 25%;
+    width: 100%;
+  }
+} */
+
+/* .goHomeSection,
+.balanceSection,
+.goToReportSection {
+  display: block;
+  width: 33%;
+}
+ */
+
+@media screen and (min-width: 768px) {
+  .balanceSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .balance {
+    margin-right: 15px;
+    border-radius: 16px;
+    border: 2px var(--bg-primary) solid;
+  }
+  .title {
+    margin-right: 21px;
+  }
+  .confirmBtn {
+    border-radius: 16px;
+  }
+
+  .reminding {
+    max-width: 292px;
+  }
+}

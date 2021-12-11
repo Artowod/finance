@@ -1,0 +1,34 @@
+.backgroundImage {
+  position: relative;
+  width: 100%;
+  border: 1px solid transparent;
+}
+.backgroundContainer {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 286px;
+  border-radius: 0 0 0 120px;
+  background-color: var(--bg-secondary);
+}
+
+@media screen and (min-width: 768px) {
+  .backgroundImage {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-image: url('../../img/bcgImageBottom.svg');
+    background-position: right 10% bottom;
+    
+  }
+  .backgroundContainer {
+    height: 526px;
+  }
+}
+@media screen and (min-width: 1280px) {
+  .backgroundImage {
+    height: 100%;
+    background-size: contain;
+    background-image: url('../../img/bcgImage.svg');
+    background-position: right bottom;
+  }
+}

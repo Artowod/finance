@@ -1,0 +1,68 @@
+ @import '../../utils/variables.css';
+ .summarySection {
+   display: none;
+   
+ }
+ .title {
+   background: var(--bg-table);
+   border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+ }
+   @media screen and (min-width: 768px) {
+      .summarySection {
+        display: block
+ 
+  }
+}
+@media screen and (min-width: 768px) {
+  .summarySection {
+    width: 230px;
+    height: fit-content;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+  }
+  .list {
+    height: 240px;
+    background: var(--bg-table);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .summarySection {
+    margin-left: auto;
+  }
+}
+
+.title {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  letter-spacing: 0.02;
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 1.17;
+  text-align: center;
+  text-transform: uppercase;
+  color: #000000;
+  border-bottom: 2px solid var(--bg-primary);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.item {
+  height: 38.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--bg-primary);
+}
+
+.itemMonthSum {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--font-secondary);
+
+  padding-left: 20px;
+  padding-right: 20px;
+}

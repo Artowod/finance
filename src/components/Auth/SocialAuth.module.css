@@ -1,0 +1,26 @@
+.fb {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 auto;
+  margin-bottom: 40px;
+  width: 122px;
+  background: #f6f7fb;
+  border-radius: 26px;
+  border: none;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-family: Roboto;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: 0.02em;
+  color: #000000;
+  cursor: pointer;
+  justify-content: space-around;
+}
+
+/* .fbIcon {
+  margin-right: 10px;
+} */
+
+/* #4267b2 */
