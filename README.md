@@ -1,5 +1,7 @@
 # Finance "pocket" - Final project of REACT/REDUX module.
 
+## Site is hosted here: https://finance-pocket-react-redux-lukavenko.netlify.app/
+
 ## Main technologies: JS, REACT, REDUX, CSS
 
 Transactions (incomes/expenses) management system + auto-balance counting + graph view of transactions by date.
