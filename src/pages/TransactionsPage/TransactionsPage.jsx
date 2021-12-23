@@ -2,7 +2,11 @@ import s from './TransactionsPage.module.css';
 import IncomesAndExpensesList from '../../components/IncomesAndExpensesList';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getIncomes, getExpenses, getLoader } from '../../redux/transactions-selectors';
+import {
+  getIncomes,
+  getExpenses,
+  getLoader,
+} from '../../redux/transactions-selectors';
 import {
   getIncomeTransactions,
   getExpensesTransactions,
@@ -13,15 +17,10 @@ import {
 
 import Container from '../../components/Container';
 import FormAddCategory from '../../components/FormAddCategory';
-// import { getIncomesCategories } from '../../redux/transactions-operations';
-// import { getExpensesCategories } from '../../redux/transactions-operations';
-// import { getIncomeTransactions } from '../../redux/transactions-operations';
-import GoHome from '../../components/GoHome/GoHome';
 import Balance from '../../components/Balance/Balance';
 import GoToReport from '../../components/GoToReport';
 import Summary from '../../components/Summary/Summary';
-import Loader from '../../components/Loader'
-import { FourGPlusMobiledataOutlined } from '@mui/icons-material';
+import Loader from '../../components/Loader';
 import Footer from '../../components/Footer';
 
 const TransactionsPage = () => {
@@ -33,26 +32,17 @@ const TransactionsPage = () => {
 
   const [isExpensesTabActive, setExpensesTabActive] = useState(true);
   const [isIncomesTabActive, setIsIncomesTabActive] = useState(false);
-  // const [isActive, setIsActive] = useState(false)
-
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-   
-    
-      dispatch(getIncomesCategories());
-      dispatch(getExpensesCategories());
+    dispatch(getIncomesCategories());
+    dispatch(getExpensesCategories());
     dispatch(getIncomeTransactions());
     dispatch(getExpensesTransactions());
-    dispatch(getExpensesCategories());
     dispatch(getDataMonth(`${year}-${curMonth}`));
-    
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // useEffect(() => {
-  //   dispatch(getExpensesTransactions());
-  // }, [dispatch]);
 
   let incomes = useSelector(getIncomes);
   let expenses = useSelector(getExpenses);
@@ -64,28 +54,23 @@ const TransactionsPage = () => {
 
   return (
     <>
-
       <Container>
-
         <div className={s.section}>
           {/* <GoHome/> */}
           <div className={s.goToReport}>
-          <GoToReport />
+            <GoToReport />
           </div>
-            {loader && <Loader />}
+          {loader && <Loader />}
           <Balance />
-          
         </div>
-       
 
         <div className={s.mainWrapper}>
           <div className={s.buttonsHolder}>
-            
-
-
             <button
               type="button"
-              className={`navBtn ${isExpensesTabActive ? 'navBtnActive' : null}`}
+              className={`navBtn ${
+                isExpensesTabActive ? 'navBtnActive' : null
+              }`}
               onClick={() => {
                 setIsExpenses(true);
                 handleToggle();
@@ -97,7 +82,6 @@ const TransactionsPage = () => {
               type="button"
               className={`navBtn ${isIncomesTabActive ? 'navBtnActive' : null}`}
               onClick={() => {
-                
                 setIsExpenses(false);
                 handleToggle();
               }}
@@ -105,22 +89,12 @@ const TransactionsPage = () => {
               {' '}
               ДОХОД
             </button>
-            {/* //         </div>
-//         <div className={s.incomesContainer}>
-//           <Balance />
-//           <FormAddCategory isExpenses={isExpenses ? 'expenses' : 'incomes'} />;
-//           <div className={s.tableWrapper}>
-//             <IncomesAndExpensesList
-//               transactions={isExpenses ? expenses : incomes}
-//               transactionsType={isExpenses ? 'expenses' : 'incomes'}
-//               operationSign={isExpenses ? '-' : ''}
-//             />
-//             <Summary />
-//           </div> */}
           </div>
           <div className={s.shadowBigScreen}>
             <div className={s.form}>
-              <FormAddCategory isExpenses={isExpenses ? 'expenses' : 'incomes'} />
+              <FormAddCategory
+                isExpenses={isExpenses ? 'expenses' : 'incomes'}
+              />
             </div>
             <div className={s.shadowSmallScreen}>
               <IncomesAndExpensesList
@@ -130,11 +104,14 @@ const TransactionsPage = () => {
               />
             </div>
             <div className={s.summaryHolder}>
-              <Summary isExpenses={isExpenses ? 'expenses' : 'incomes'} className={s.summary} />
+              <Summary
+                isExpenses={isExpenses ? 'expenses' : 'incomes'}
+                className={s.summary}
+              />
             </div>
           </div>
         </div>
-        <Footer/>
+        <Footer />
       </Container>
     </>
   );

@@ -29,14 +29,19 @@ import { createReducer } from '@reduxjs/toolkit';
 const balanceReducer = createReducer(null, {
   [setBalance]: (_, action) => action.payload,
   [updateBalance.fulfilled]: (_, action) => action.payload,
-  [addIncomeTransaction.fulfilled]: (_, action) => action.payload.data.newBalance,
-  [addExpenseTransaction.fulfilled]: (_, action) => action.payload.data.newBalance,
-  [deleteTransaction.fulfilled]: (_, action) => action.payload?.data?.newBalance,
+  [addIncomeTransaction.fulfilled]: (_, action) =>
+    action.payload.data.newBalance,
+  [addExpenseTransaction.fulfilled]: (_, action) =>
+    action.payload.data.newBalance,
+  [deleteTransaction.fulfilled]: (_, action) =>
+    action.payload?.data?.newBalance,
   [getUser.fulfilled]: (state, action) => action.payload?.data?.balance,
 });
 
 const expensesReducer = createReducer([], {
-  [getExpensesTransactions.fulfilled]: (state, action) => [...state, ...action?.payload?.expenses],
+  [getExpensesTransactions.fulfilled]: (state, action) => [
+    ...action?.payload?.expenses,
+  ],
   [addExpenseTransaction.fulfilled]: (state, action) => [
     action?.payload?.data?.transaction,
     ...state,
@@ -48,7 +53,9 @@ const expensesReducer = createReducer([], {
 });
 
 const incomesReducer = createReducer([], {
-  [getIncomeTransactions.fulfilled]: (state, action) => [...state, ...action?.payload?.incomes],
+  [getIncomeTransactions.fulfilled]: (state, action) => [
+    ...action?.payload?.incomes,
+  ],
   [addIncomeTransaction.fulfilled]: (state, action) => [
     action?.payload?.data?.transaction,
     ...state,
@@ -62,13 +69,16 @@ const incomesReducer = createReducer([], {
 const getIncomesMonthReducer = createReducer([], {
   [getIncomeTransactions.fulfilled]: (_, action) => action.payload.monthsStats,
   [addIncomeTransaction.fulfilled]: (_, action) => action.payload.monthsStats,
-  [deleteTransaction.fulfilled]: (_, action) => action.payload?.updStats?.monthsStats,
+  [deleteTransaction.fulfilled]: (_, action) =>
+    action.payload?.updStats?.monthsStats,
 });
 
 const getExpensesMonthReducer = createReducer([], {
-  [getExpensesTransactions.fulfilled]: (_, action) => action.payload.monthsStats,
+  [getExpensesTransactions.fulfilled]: (_, action) =>
+    action.payload.monthsStats,
   [addExpenseTransaction.fulfilled]: (_, action) => action.payload.monthsStats,
-  [deleteTransaction.fulfilled]: (_, action) => action.payload?.updStats?.monthsStats,
+  [deleteTransaction.fulfilled]: (_, action) =>
+    action.payload?.updStats?.monthsStats,
 });
 
 // const getNewBalanceReducer = createReducer([], {
