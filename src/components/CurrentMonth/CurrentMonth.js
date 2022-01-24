@@ -12,13 +12,9 @@ const CurrentMonth = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    if (curMonth < 10) {
-      const month = `0${curMonth}`;
-      console.log(month);
-      dispatch(getDataMonth(`${year}-${month}`));
-    } else {
-      dispatch(getDataMonth(`${year}-${curMonth}`));
-    }
+    const monthView = curMonth.toString().padStart(2, '0');
+
+    dispatch(getDataMonth(`${year}-${monthView}`));
   }, [dispatch, year, curMonth]);
 
   const handlePrevMonth = () => {
@@ -45,7 +41,13 @@ const CurrentMonth = () => {
     <div className={s.currentMonthBlock}>
       <span className={s.currentMonth}>Текущий период</span>
       <div className={s.monthBlock}>
-        <svg viewBox="0 0 10 10" onClick={handlePrevMonth} width="10" height="10" fill="red">
+        <svg
+          viewBox="0 0 10 10"
+          onClick={handlePrevMonth}
+          width="10"
+          height="10"
+          fill="red"
+        >
           <use href={sprite + '#icon-arrowLeft'}></use>
         </svg>
         <span className={s.currentMonthText}>

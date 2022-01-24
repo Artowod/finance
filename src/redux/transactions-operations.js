@@ -71,23 +71,27 @@ export const getExpensesTransactions = createAsyncThunk(
   },
 );
 
-export const deleteTransaction = createAsyncThunk('transactions/deleteTransaction', async props => {
-  try {
-    const { itemId, transactionsType } = props;
-    console.log('TRANSAC', transactionsType);
+export const deleteTransaction = createAsyncThunk(
+  'transactions/deleteTransaction',
+  async props => {
+    try {
+      const { itemId, transactionsType } = props;
+      console.log('TRANSAC', transactionsType);
 
-    const { data } = await axios.delete(`/transaction/${itemId}`);
-    let { data: expenseStats } = await axios.get('/transaction/expense');
-    let { data: incomeStats } = await axios.get('/transaction/income');
+      const { data } = await axios.delete(`/transaction/${itemId}`);
+      let { data: expenseStats } = await axios.get('/transaction/expense');
+      let { data: incomeStats } = await axios.get('/transaction/income');
 
-    let updStats = transactionsType === 'expenses' ? expenseStats : incomeStats;
+      let updStats =
+        transactionsType === 'expenses' ? expenseStats : incomeStats;
 
-    console.log(data, itemId, updStats);
-    return { data, itemId, updStats };
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+      console.log(data, itemId, updStats);
+      return { data, itemId, updStats };
+    } catch (error) {
+      console.log(error.message);
+    }
+  },
+);
 
 export const getIncomesCategories = createAsyncThunk(
   'transactions/getIncomesCategories',
@@ -136,23 +140,32 @@ export const updateBalance = createAsyncThunk(
   },
 );
 
-export const getDataMonth = createAsyncThunk('transactions/getDataMonth', async credentials => {
-  console.log(credentials);
-  try {
-    const { data } = await axios.get(`/transaction/period-data?date=${credentials}`);
-
-    return data;
-  } catch (error) {
-    console.log(error.message);
-  }
-});
+export const getDataMonth = createAsyncThunk(
+  'transactions/getDataMonth',
+  async credentials => {
+    console.log('Credentials DATAMONTH', credentials);
+    try {
+      // const { data } = await axios.get(
+      //   `/transaction/period-data?date=${credentials}`,
+      const { data } = await axios.get(
+        `/transaction/period-data?date=${credentials}`,
+      );
+      console.log('DATAMONTH', data);
+      return data;
+    } catch (error) {
+      console.log('DataMonth error', error.message);
+    }
+  },
+);
 
 export const getDataCompareMonth = createAsyncThunk(
   'transactions/getDataCompareMonth',
   async credentials => {
     console.log(credentials);
     try {
-      const { data } = await axios.get(`/transaction/period-data?date=${credentials}`);
+      const { data } = await axios.get(
+        `/transaction/period-data?date=${credentials}`,
+      );
 
       return data;
     } catch (error) {

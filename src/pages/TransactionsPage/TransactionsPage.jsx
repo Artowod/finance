@@ -36,11 +36,12 @@ const TransactionsPage = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const monthView = curMonth.toString().padStart(2, '0');
     dispatch(getIncomesCategories());
     dispatch(getExpensesCategories());
     dispatch(getIncomeTransactions());
     dispatch(getExpensesTransactions());
-    dispatch(getDataMonth(`${year}-${curMonth}`));
+    dispatch(getDataMonth(`${year}-${monthView}`));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
